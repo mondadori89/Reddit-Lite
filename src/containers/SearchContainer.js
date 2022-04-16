@@ -48,33 +48,3 @@ export const SearchContainer = (props) => {
 };
 
 
-/*
-<form onSubmit={handleSubmit}>
-          <input
-            value={profile.name || ''}
-            type="text"
-            placeholder="Type something here"
-            onChange={handleChange}
-            required
-          />
-          <button type="submit">Submit</button>
-*/
-
-/*
-    const url = 'https://api.datamuse.com/words?';
-    const queryParams = 'rel_jja=';
-    
-    const getSuggestions = async () => {
-        const wordQuery = inputField.value;
-        const endpoint = `${url}${queryParams}${wordQuery}`;
-        try {
-            const response = await fetch(endpoint, {cache: 'no-cache'});
-            if (response.ok) {
-            const jsonResponse = await response.json();
-            console.log(jsonResponse);
-            }
-        } catch(error) {
-            console.log(error);
-        }
-    }
-*/

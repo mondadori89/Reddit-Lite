@@ -10,7 +10,7 @@ export const PostsContainer = (props) => {
         <h2>Posts here</h2> 
         <ul>
             {posts.map(post => (
-                <li>
+                <li key={post.data.id}>
                     <Post
                         post={post}
                     />
@@ -23,19 +23,3 @@ export const PostsContainer = (props) => {
   );
 };
 
-/*
-<ul>
-        {objectsArray.map((each) => (
-          <li key={each.id}>
-            <Tile
-              object={each}
-            />
-          </li>
-         ))}
-      </ul>
-
-
-      <Post
-                        post={post}
-                    />
-      */
