@@ -1,24 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const SearchContainer = (props) => {
   const { searchTerm, setSearchTerm, posts, setPosts } = props;
+
+  const url = 'https://www.reddit.com/search.json?q=';
+
 
   const handleChange = ({ target }) => {
     setSearchTerm(target.value);
   };
 
-  const handleSubmit = (event) => {
+
+  const handleSubmit = async(event) => {
     event.preventDefault();
-    /*
-    const checkContact = obj => obj.name === profile.name;
-    if (contact.some(checkContact)) {
-      alert('This contact is already on your list...');
-      return;
+    const endpoint = `${url}${searchTerm}`;
+    try {
+        const response = await fetch(endpoint);
+        if (response.ok) {
+            const jsonResponse = await response.json();
+            setPosts(jsonResponse.data.children);
+            console.log(jsonResponse.data.children);
+        }   
+    } catch(error) {
+        console.log(error);
     }
-    setContact((prev) => { return [profile, ...prev]; })
-    setProfile({});*/
   };
 
+    
   return (
     <div>
       <section>
@@ -39,6 +47,7 @@ export const SearchContainer = (props) => {
   );
 };
 
+
 /*
 <form onSubmit={handleSubmit}>
           <input
@@ -49,4 +58,23 @@ export const SearchContainer = (props) => {
             required
           />
           <button type="submit">Submit</button>
+*/
+
+/*
+    const url = 'https://api.datamuse.com/words?';
+    const queryParams = 'rel_jja=';
+    
+    const getSuggestions = async () => {
+        const wordQuery = inputField.value;
+        const endpoint = `${url}${queryParams}${wordQuery}`;
+        try {
+            const response = await fetch(endpoint, {cache: 'no-cache'});
+            if (response.ok) {
+            const jsonResponse = await response.json();
+            console.log(jsonResponse);
+            }
+        } catch(error) {
+            console.log(error);
+        }
+    }
 */

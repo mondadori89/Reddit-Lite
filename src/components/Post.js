@@ -4,14 +4,10 @@ export const Post = (props) => {
   const { post } = props;
 
   return (
-    <div className="tile-container">
-      <p>{object.name ? 'Name:' : ''} {object.name} </p>
-      <p>{object.email ? 'E-mail:' : ''} {object.email} </p>
-      <p>{object.phoneNumber ? 'Phone number:' : ''} {object.phoneNumber} </p>
-      <p>{object.title ? 'Appointment:' : ''} {object.title} </p>
-      <p>{object.date ? 'Date:' : ''} {object.date} </p>
-      <p>{object.time ? 'Time:' : ''} {object.time} </p>
-      <p>{object.contactSelected ? 'Who:' : ''} {object.contactSelected} </p>
+    <div className="post-container">
+      <h3>
+        {post.data.title}
+      </h3>
     </div>
   );
 };

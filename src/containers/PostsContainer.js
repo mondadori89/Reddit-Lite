@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Post } from '../components/Post';
 
 export const PostsContainer = (props) => {
   const { posts } = props;
@@ -7,9 +8,34 @@ export const PostsContainer = (props) => {
     <div>
       <section>
         <h2>Posts here</h2> 
-        <h3>Some post</h3>
+        <ul>
+            {posts.map(post => (
+                <li>
+                    <Post
+                        post={post}
+                    />
+                </li>
+            ))}
+        </ul>
       </section>
       <hr />
     </div>
   );
 };
+
+/*
+<ul>
+        {objectsArray.map((each) => (
+          <li key={each.id}>
+            <Tile
+              object={each}
+            />
+          </li>
+         ))}
+      </ul>
+
+
+      <Post
+                        post={post}
+                    />
+      */
