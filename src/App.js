@@ -14,9 +14,10 @@ function App() {
 
   useEffect(() => {
     console.log('useEffect triggered');
-
+    
+    const postsOnEffect = posts;
     const filterPostsByTopic = () => {
-      const fiteredPosts = posts.filter(post => {
+      const fiteredPosts = postsOnEffect.filter(post => {
           return post.data.subreddit === topicFilter;
       });
       return fiteredPosts
