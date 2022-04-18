@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 export const SearchContainer = (props) => {
-  const { searchTerm, setSearchTerm, posts, setPosts, topics, setTopics } = props;
+  const { searchTerm, setSearchTerm, setPosts, setTopics } = props;
 
   const url = 'https://www.reddit.com/search.json?q=';
   let searchTermOnAPI = searchTerm;

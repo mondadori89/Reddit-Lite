@@ -14,13 +14,16 @@ function App() {
 
   useEffect(() => {
     console.log('useEffect triggered');
+
     const filterPostsByTopic = () => {
       const fiteredPosts = posts.filter(post => {
           return post.data.subreddit === topicFilter;
       });
-      setPostsFiltered(fiteredPosts);
+      return fiteredPosts
     }
-    filterPostsByTopic();
+
+    setPostsFiltered(filterPostsByTopic());
+
   }, [topicFilter]);
 
   return (
@@ -29,9 +32,7 @@ function App() {
         <SearchContainer 
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
-          posts={posts}
           setPosts={setPosts}
-          topics={topics}
           setTopics={setTopics}
         />
       </header>
