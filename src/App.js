@@ -12,11 +12,11 @@ function App() {
   const [postsFiltered, setPostsFiltered] = useState([]);
 
 
-  useEffect((postsOnEffect = posts) => {
+  useEffect(() => {
     console.log('useEffect triggered');
 
     const filterPostsByTopic = () => {
-      const fiteredPosts = postsOnEffect.filter(post => {
+      const fiteredPosts = posts.filter(post => {
           return post.data.subreddit === topicFilter;
       });
       return fiteredPosts
@@ -24,7 +24,7 @@ function App() {
 
     setPostsFiltered(filterPostsByTopic());
 
-  }, [topicFilter]);
+  }, [topicFilter, posts]);
 
   return (
     <div className="App">
