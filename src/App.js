@@ -13,7 +13,7 @@ function App() {
 
 
   useEffect(() => {
-    console.log('useEffect triggered');
+    console.log('useEffect topicfilter triggered');
 
     const filterPostsByTopic = () => {
       const fiteredPosts = posts.filter(post => {

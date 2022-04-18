@@ -40,7 +40,10 @@ export const SearchContainer = (props) => {
     apiFetch(searchTerm);
   };
 
+
+
   useEffect(() => {
+
     const apiFetch = async(searchTermOnAPI) => {
       const endpoint = `${url}${searchTermOnAPI}`;
       try {
@@ -48,27 +51,34 @@ export const SearchContainer = (props) => {
         if (response.ok) {
   
           const jsonResponse = await response.json();
-          setPosts(jsonResponse.data.children);
-          console.log(jsonResponse.data.children);
+          const jsonData = jsonResponse.data.children;
+          setPosts(jsonData);
+          console.log(jsonData);
+
           
           let tempTopics = [];
-          for (let i = 0; i < jsonResponse.data.children.length; i++) {
-            let jsonSubreddit = jsonResponse.data.children[i].data.subreddit;
+          for (let i = 0; i < jsonData.length; i++) {
+            let jsonSubreddit = jsonData[i].data.subreddit;
             tempTopics.push(jsonSubreddit);
           }
           let uniqueTopics = [...new Set(tempTopics)];
           setTopics(uniqueTopics);
           console.log(uniqueTopics);
-  
+
         } 
       } catch(error) {
         console.log(error);
       }
     }
+
     apiFetch('spacex');
-    console.log('whazaaaaaaaaaa');
-  }, []);
     
+    console.log('whazaaaaaaaaaa');
+  }, [setPosts, setTopics]);
+    
+
+
+
   return (
     <div>
       <section>
