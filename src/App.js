@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
 import { SearchContainer } from './containers/SearchContainer';
 import { PostsContainer } from './containers/PostsContainer';
@@ -9,10 +9,21 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [topics, setTopics] = useState([]);
   const [topicFilter, setTopicFilter] = useState('');
+  const [postsFiltered, setPostsFiltered] = useState([]);
 
-  const setPostsFiltered = (topic) => {
 
+  const filterPostsByTopic = () => {
+    const fiteredPosts = posts.filter(post => {
+        return post.data.subreddit === topicFilter;
+    });
+    setPostsFiltered(fiteredPosts);
   }
+
+
+  useEffect(() => {
+    console.log('useEffect triggered');
+    filterPostsByTopic();
+  }, [topicFilter]);
 
   return (
     <div className="App">
@@ -33,6 +44,8 @@ function App() {
         />
         <PostsContainer 
           posts={posts}
+          topicFilter={topicFilter}
+          postsFiltered={postsFiltered}
         />
       </main>
     </div>
