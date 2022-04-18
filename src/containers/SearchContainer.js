@@ -4,14 +4,13 @@ export const SearchContainer = (props) => {
   const { searchTerm, setSearchTerm, setPosts, setTopics } = props;
 
   const url = 'https://www.reddit.com/search.json?q=';
-  let searchTermOnAPI = searchTerm;
 
-  const apiFetch = async() => {
+  const apiFetch = async(searchTermOnAPI) => {
     const endpoint = `${url}${searchTermOnAPI}`;
     try {
       const response = await fetch(endpoint);
       if (response.ok) {
-        //
+
         const jsonResponse = await response.json();
         setPosts(jsonResponse.data.children);
         console.log(jsonResponse.data.children);
@@ -37,12 +36,11 @@ export const SearchContainer = (props) => {
 
   const handleSubmit = async(event) => {
     event.preventDefault();
-    apiFetch();
+    apiFetch(searchTerm);
   };
 
   useEffect(() => {
-    searchTermOnAPI = 'spacex';
-    apiFetch();
+    apiFetch('spacex');
     console.log('whazaaaaaaaaaa');
   }, []);
     
