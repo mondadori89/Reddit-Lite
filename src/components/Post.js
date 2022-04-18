@@ -11,8 +11,8 @@ export const Post = (props) => {
     <div className="post-container">
       <h4 className="subredditTag" >Topic: {post.data.subreddit}</h4>
     
-      <a href={post.data.url} target="_blank">
-        <img className="postImage" src={thumbnail.length > 10 ? thumbnail : thumbnailReserva}/>
+      <a href={post.data.url} target="_blank" rel="noreferrer">
+        <img className="postImage" src={thumbnail.length > 10 ? thumbnail : thumbnailReserva} alt={thumbnailReserva}/>
       </a>
       <h3>
         {post.data.title}

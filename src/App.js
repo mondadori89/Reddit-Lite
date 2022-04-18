@@ -12,16 +12,14 @@ function App() {
   const [postsFiltered, setPostsFiltered] = useState([]);
 
 
-  const filterPostsByTopic = () => {
-    const fiteredPosts = posts.filter(post => {
-        return post.data.subreddit === topicFilter;
-    });
-    setPostsFiltered(fiteredPosts);
-  }
-
-
   useEffect(() => {
     console.log('useEffect triggered');
+    const filterPostsByTopic = () => {
+      const fiteredPosts = posts.filter(post => {
+          return post.data.subreddit === topicFilter;
+      });
+      setPostsFiltered(fiteredPosts);
+    }
     filterPostsByTopic();
   }, [topicFilter]);
 

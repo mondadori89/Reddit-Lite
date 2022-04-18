@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 export const SearchContainer = (props) => {
   const { searchTerm, setSearchTerm, posts, setPosts, topics, setTopics } = props;

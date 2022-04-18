@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export const TopicsContainer = (props) => {
   const { topics, setTopicFilter } = props;
