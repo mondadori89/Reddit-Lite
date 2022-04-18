@@ -4,17 +4,19 @@ export const Post = (props) => {
   const { post } = props;
 
   const postText = post.data.selftext;
+  const thumbnail = post.data.thumbnail;
   const thumbnailReserva = 'https://b.thumbs.redditmedia.com/xerVblnhtgBmXjB5ZeYDzZ5MN9MqVmDAR5fdGa7aG_A.jpg';
 
   return (
     <div className="post-container">
       <h4 className="subredditTag" >Subreddit: {post.data.subreddit}</h4>
-      <img className="postImage" src={post.data.thumbnail !== 'self' ? post.data.thumbnail : thumbnailReserva}/>
+    
+      <a href={post.data.url} target="_blank">
+        <img className="postImage" src={thumbnail.length > 10 ? thumbnail : thumbnailReserva}/>
+      </a>
       <h3>
         {post.data.title}
       </h3>
-      
-      <br></br>
       <div>
         <p>Text: {postText ? postText : 'no text' }</p>
       </div>

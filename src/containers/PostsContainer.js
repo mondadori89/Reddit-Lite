@@ -5,12 +5,12 @@ export const PostsContainer = (props) => {
   const { posts } = props;
 
   return (
-    <div>
+    <div className="allPostsContainer">
       <section>
         <h2>Posts here</h2> 
-        <ul>
+        <ul >
             {posts.map(post => (
-                <li key={post.data.id}>
+                <li key={post.data.id} style={{ listStyleType: "none" }}>
                     <Post
                         post={post}
                     />
