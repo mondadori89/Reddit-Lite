@@ -4,7 +4,7 @@ The objective of this project is to have a lite version of the Reddit App that y
 
 ### `https://github.com/reddit-archive/reddit/wiki/JSON`
 
-*Later...:* Also, as a Feature, you can select a Topic os interest que search that term inside that topic. 
+*Later...:* Also, as a Feature, you can select a Topic of interest from the topics that search returned and filter the posts.
 
 
 ## Install

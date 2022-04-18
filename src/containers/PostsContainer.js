@@ -7,7 +7,6 @@ export const PostsContainer = (props) => {
   return (
     <div className="allPostsContainer">
       <section>
-        <h2>Posts here</h2> 
         <ul >
             {posts.map(post => (
                 <li key={post.data.id} style={{ listStyleType: "none" }}>
