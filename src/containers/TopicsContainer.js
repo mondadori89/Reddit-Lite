@@ -5,7 +5,6 @@ export const TopicsContainer = (props) => {
 
   const handleClick = ({ target }) => {
     setTopicFilter(target.innerHTML);
-    console.log(target.innerHTML);
   }
 
   return (
@@ -19,8 +18,6 @@ export const TopicsContainer = (props) => {
                   key={topic} 
                   style={{ listStyleType: "none" }}
                   onClick={handleClick}
-                  name={topic}
-                  value={topic}
                 >
                   {topic}
                 </li>
