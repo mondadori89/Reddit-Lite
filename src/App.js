@@ -34,6 +34,7 @@ function App() {
           setSearchTerm={setSearchTerm}
           setPosts={setPosts}
           setTopics={setTopics}
+          setTopicFilter={setTopicFilter}
         />
       </header>
       <main>
