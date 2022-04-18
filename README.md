@@ -20,7 +20,7 @@ and also:
 
 ## Archtecture
 
-![image](./documentation/flow-chart.jpg)
+![image](./src/documentation/flow-chart.jpg)
 
 
 
