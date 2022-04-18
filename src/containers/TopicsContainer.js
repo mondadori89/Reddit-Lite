@@ -4,10 +4,8 @@ export const TopicsContainer = (props) => {
   const { topics, setTopicFilter } = props;
 
   const handleClick = ({ target }) => {
-    const { name, value } = target;
-    setTopicFilter('xxx');
-    console.log(target);
-    console.log(value);
+    setTopicFilter(target.innerHTML);
+    console.log(target.innerHTML);
   }
 
   return (
