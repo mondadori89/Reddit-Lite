@@ -17,7 +17,7 @@ export const TopicsContainer = (props) => {
   return (
     <div className="topics-container">
       <section className="sticky">
-        <h2>Topics here</h2> 
+        <h2>Sub Topics</h2> 
         <ul className="topicsList">
             <li
               className="topicItem"

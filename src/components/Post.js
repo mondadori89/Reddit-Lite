@@ -9,7 +9,7 @@ export const Post = (props) => {
 
   return (
     <div className="post-container">
-      <h4 className="subredditTag" >Subreddit: {post.data.subreddit}</h4>
+      <h4 className="subredditTag" >Topic: {post.data.subreddit}</h4>
     
       <a href={post.data.url} target="_blank">
         <img className="postImage" src={thumbnail.length > 10 ? thumbnail : thumbnailReserva}/>

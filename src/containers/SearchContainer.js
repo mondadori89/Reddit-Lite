@@ -49,7 +49,7 @@ export const SearchContainer = (props) => {
   return (
     <div>
       <section>
-        <h2>Search bar here</h2> 
+        <h2>Search bar</h2> 
             <form onSubmit={handleSubmit}>
                 <input
                     value={searchTerm || ''}

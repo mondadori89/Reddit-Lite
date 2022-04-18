@@ -23,7 +23,6 @@ export const PostsContainer = (props) => {
             ))}
         </ul>
       </section>
-      <hr />
     </div>
   );
 };
