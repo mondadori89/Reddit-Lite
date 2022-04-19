@@ -80,9 +80,9 @@ export const SearchContainer = (props) => {
 
 
   return (
-    <div>
+    <div className="searchDiv">
       <section>
-        <h2>Search bar</h2> 
+        <h3>Search bar</h3> 
             <form onSubmit={handleSubmit}>
                 <input
                     value={searchTerm || ''}
@@ -90,8 +90,10 @@ export const SearchContainer = (props) => {
                     placeholder="Type something here"
                     onChange={handleChange}
                     required
+                    className="searchInput"
                 />
-                <button type="submit">Submit</button>
+                <br/>
+                <button type="submit" className="searchSubmit" >Submit</button>
             </form>
       </section>
       <br />
